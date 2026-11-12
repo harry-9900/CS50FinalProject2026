@@ -1,0 +1,116 @@
+const skillsData = [
+  {id:'cs50x', name:'CS50x Harvard', category:'Web Dev', level:'Beginner', sources:[{name:'Harvard edX', type:'Free', url:'https://cs50.harvard.edu/x/'}, {name:'Harvard Plurality', type:'Free', url:'https://pll.harvard.edu/course/cs50-introduction-computer-science'}]},
+  {id:'cs50w', name:'CS50W Web Development', category:'Web Dev', level:'Intermediate', sources:[{name:'Harvard edX', type:'Free', url:'https://cs50.harvard.edu/web/'}]},
+  {id:'cs50p', name:'CS50P Python', category:'Data Science', level:'Beginner', sources:[{name:'Harvard edX', type:'Free', url:'https://cs50.harvard.edu/python/'}]},
+
+  {id:'ai_engineer', name:'AI Engineer', category:'AI/ML', level:'Advanced', sources:[{name:'DeepLearning.AI', type:'Free', url:'https://www.deeplearning.ai'}]},
+  {id:'ml_engineer', name:'Machine Learning Engineer', category:'AI/ML', level:'Advanced', sources:[{name:'Coursera', type:'Paid', url:'https://coursera.org'}]},
+  {id:'cybersecurity_engineer', name:'Cybersecurity Engineer', category:'Cyber Security', level:'Advanced', sources:[{name:'TryHackMe', type:'Free/Paid', url:'https://tryhackme.com'}]},
+  {id:'cloud_engineer', name:'Cloud Engineer', category:'Cloud', level:'Intermediate', sources:[{name:'AWS Skill Builder', type:'Free', url:'https://skillbuilder.aws'}]},
+  {id:'ai_infra', name:'AI Infrastructure Engineer', category:'AI/ML', level:'Advanced', sources:[{name:'Google Cloud', type:'Free', url:'https://cloud.google.com'}]},
+  {id:'data_engineer', name:'Data Engineer', category:'Data Science', level:'Advanced', sources:[{name:'DataCamp', type:'Paid', url:'https://www.datacamp.com'}]},
+  {id:'fintech_engineer', name:'Fintech Engineer', category:'Web Dev', level:'Advanced', sources:[{name:'Coursera Fintech', type:'Free', url:'https://coursera.org'}]},
+  {id:'ai_product_manager', name:'AI Product Manager', category:'AI/ML', level:'Intermediate', sources:[{name:'Product School', type:'Free/Paid', url:'https://productschool.com'}]},
+  {id:'solutions_engineer', name:'Solutions Engineer', category:'Cloud', level:'Advanced', sources:[{name:'Microsoft Learn', type:'Free', url:'https://learn.microsoft.com'}]},
+  {id:'robotics_engineer', name:'Robotics Engineer', category:'AI/ML', level:'Advanced', sources:[{name:'ROS.org', type:'Free', url:'https://www.ros.org'}]},
+  {id:'llm_ops', name:'LLM Ops Engineer', category:'AI/ML', level:'Advanced', sources:[{name:'Hugging Face', type:'Free', url:'https://huggingface.co'}]},
+  {id:'ai_consultant', name:'AI Consultant', category:'AI/ML', level:'Advanced', sources:[{name:'Coursera AI', type:'Paid', url:'https://coursera.org'}]},
+
+  {id:'html', name:'HTML5', category:'Web Dev', level:'Beginner', sources:[{name:'MDN', type:'Free', url:'https://developer.mozilla.org'}]},
+  {id:'css', name:'CSS3', category:'Web Dev', level:'Beginner', sources:[{name:'W3Schools', type:'Free', url:'https://www.w3schools.com'}]},
+  {id:'js', name:'JavaScript', category:'Web Dev', level:'Intermediate', sources:[{name:'MDN', type:'Free', url:'https://developer.mozilla.org'}, {name:'Udemy', type:'Paid', url:'https://udemy.com'}]},
+  {id:'react', name:'React JS', category:'Web Dev', level:'Advanced', sources:[{name:'React.dev', type:'Free', url:'https://react.dev'}]},
+  {id:'nodejs', name:'Node.js', category:'Web Dev', level:'Intermediate', sources:[{name:'Node Docs', type:'Free', url:'https://nodejs.org'}]},
+  {id:'express', name:'Express.js', category:'Web Dev', level:'Intermediate', sources:[{name:'Express Docs', type:'Free', url:'https://expressjs.com'}]},
+  {id:'tailwind', name:'Tailwind CSS', category:'Web Dev', level:'Beginner', sources:[{name:'Tailwind', type:'Free', url:'https://tailwindcss.com'}]},
+  {id:'typescript', name:'TypeScript', category:'Web Dev', level:'Advanced', sources:[{name:'TS Docs', type:'Free', url:'https://www.typescriptlang.org'}]},
+  {id:'nextjs', name:'Next.js', category:'Web Dev', level:'Advanced', sources:[{name:'Next.js', type:'Free', url:'https://nextjs.org'}]},
+  {id:'php', name:'PHP', category:'Web Dev', level:'Intermediate', sources:[{name:'PHP.net', type:'Free', url:'https://www.php.net'}]},
+  {id:'bootstrap', name:'Bootstrap 5', category:'Web Dev', level:'Beginner', sources:[{name:'GetBootstrap', type:'Free', url:'https://getbootstrap.com'}]},
+  {id:'vuejs', name:'Vue.js', category:'Web Dev', level:'Advanced', sources:[{name:'Vuejs.org', type:'Free', url:'https://vuejs.org'}]},
+  {id:'angular', name:'Angular', category:'Web Dev', level:'Advanced', sources:[{name:'Angular.io', type:'Free', url:'https://angular.io'}]},
+  {id:'sass', name:'Sass/SCSS', category:'Web Dev', level:'Beginner', sources:[{name:'Sass-lang', type:'Free', url:'https://sass-lang.com'}]},
+  {id:'jquery', name:'jQuery', category:'Web Dev', level:'Beginner', sources:[{name:'JQuery.com', type:'Free', url:'https://jquery.com'}]},
+  {id:'graphql', name:'GraphQL', category:'Web Dev', level:'Advanced', sources:[{name:'GraphQL.org', type:'Free', url:'https://graphql.org'}]},
+  {id:'redux', name:'Redux Toolkit', category:'Web Dev', level:'Advanced', sources:[{name:'Redux.js', type:'Free', url:'https://redux.js.org'}]},
+  {id:'webpack', name:'Webpack', category:'Web Dev', level:'Advanced', sources:[{name:'Webpack.js', type:'Free', url:'https://webpack.js.org'}]},
+  {id:'seo', name:'Web SEO Basics', category:'Web Dev', level:'Beginner', sources:[{name:'Moz', type:'Free', url:'https://moz.com'}]},
+  {id:'web_security', name:'Web Security (OWASP)', category:'Web Dev', level:'Advanced', sources:[{name:'OWASP', type:'Free', url:'https://owasp.org'}]},
+
+  {id:'python', name:'Python', category:'Data Science', level:'Beginner', sources:[{name:'CS50x', type:'Free', url:'https://cs50.harvard.edu'}]},
+  {id:'sql', name:'SQL & Databases', category:'Data Science', level:'Beginner', sources:[{name:'W3Schools', type:'Free', url:'https://www.w3schools.com'}]},
+  {id:'pandas', name:'Pandas', category:'Data Science', level:'Intermediate', sources:[{name:'Pandas', type:'Free', url:'https://pandas.pydata.org'}]},
+  {id:'numpy', name:'NumPy', category:'Data Science', level:'Intermediate', sources:[{name:'NumPy', type:'Free', url:'https://numpy.org'}]},
+  {id:'r_lang', name:'R Programming', category:'Data Science', level:'Intermediate', sources:[{name:'R-project', type:'Free', url:'https://www.r-project.org'}]},
+  {id:'tableau', name:'Tableau', category:'Data Science', level:'Beginner', sources:[{name:'Tableau', type:'Free', url:'https://public.tableau.com'}]},
+  {id:'powerbi', name:'Power BI', category:'Data Science', level:'Beginner', sources:[{name:'Microsoft', type:'Free', url:'https://learn.microsoft.com'}]},
+  {id:'statistics', name:'Statistics', category:'Data Science', level:'Intermediate', sources:[{name:'Khan Academy', type:'Free', url:'https://www.khanacademy.org'}]},
+  {id:'scipy', name:'SciPy', category:'Data Science', level:'Advanced', sources:[{name:'SciPy', type:'Free', url:'https://scipy.org'}]},
+  {id:'data_cleaning', name:'Data Cleaning', category:'Data Science', level:'Beginner', sources:[{name:'Kaggle', type:'Free', url:'https://www.kaggle.com'}]},
+  {id:'matplotlib', name:'Matplotlib', category:'Data Science', level:'Intermediate', sources:[{name:'Matplotlib', type:'Free', url:'https://matplotlib.org'}]},
+  {id:'seaborn', name:'Seaborn', category:'Data Science', level:'Intermediate', sources:[{name:'Seaborn', type:'Free', url:'https://seaborn.pydata.org'}]},
+  {id:'big_query', name:'Google BigQuery', category:'Data Science', level:'Advanced', sources:[{name:'Google Cloud', type:'Free', url:'https://cloud.google.com'}]},
+  {id:'apache_spark', name:'Apache Spark', category:'Data Science', level:'Advanced', sources:[{name:'Spark.apache', type:'Free', url:'https://spark.apache.org'}]},
+  {id:'hadoop', name:'Apache Hadoop', category:'Data Science', level:'Advanced', sources:[{name:'Hadoop.apache', type:'Free', url:'https://hadoop.apache.org'}]},
+  {id:'excel_advanced', name:'Advanced Excel', category:'Data Science', level:'Beginner', sources:[{name:'Microsoft Learn', type:'Free', url:'https://learn.microsoft.com'}]},
+  {id:'data_storytelling', name:'Data Storytelling', category:'Data Science', level:'Beginner', sources:[{name:'Coursera', type:'Free', url:'https://coursera.org'}]},
+  {id:'etl_pipelines', name:'ETL Pipelines', category:'Data Science', level:'Advanced', sources:[{name:'Airflow', type:'Free', url:'https://airflow.apache.org'}]},
+  {id:'plotly', name:'Plotly', category:'Data Science', level:'Intermediate', sources:[{name:'Plotly', type:'Free', url:'https://plotly.com'}]},
+  {id:'ab_testing', name:'A/B Testing', category:'Data Science', level:'Advanced', sources:[{name:'Udacity', type:'Free', url:'https://www.udacity.com'}]},
+
+  {id:'cyber_basics', name:'Cyber Security Basics', category:'Cyber Security', level:'Beginner', sources:[{name:'TryHackMe', type:'Free/Paid', url:'https://tryhackme.com'}]},
+  {id:'networking', name:'Computer Networking', category:'Cyber Security', level:'Intermediate', sources:[{name:'Cisco', type:'Free', url:'https://www.netacad.com'}]},
+  {id:'ethical_hacking', name:'Ethical Hacking', category:'Cyber Security', level:'Advanced', sources:[{name:'HackTheBox', type:'Free/Paid', url:'https://www.hackthebox.com'}]},
+  {id:'linux', name:'Linux Administration', category:'Cyber Security', level:'Intermediate', sources:[{name:'Linux Foundation', type:'Free', url:'https://www.linuxfoundation.org'}]},
+  {id:'cryptography', name:'Cryptography', category:'Cyber Security', level:'Advanced', sources:[{name:'Coursera', type:'Paid', url:'https://coursera.org'}]},
+  {id:'pentesting', name:'Penetration Testing', category:'Cyber Security', level:'Advanced', sources:[{name:'PortSwigger', type:'Free', url:'https://portswigger.net'}]},
+
+  {id:'deep_learning', name:'Deep Learning', category:'AI/ML', level:'Advanced', sources:[{name:'DeepLearning.AI', type:'Free', url:'https://www.deeplearning.ai'}]},
+  {id:'tensorflow', name:'TensorFlow', category:'AI/ML', level:'Advanced', sources:[{name:'TensorFlow', type:'Free', url:'https://www.tensorflow.org'}]},
+  {id:'pytorch', name:'PyTorch', category:'AI/ML', level:'Advanced', sources:[{name:'PyTorch', type:'Free', url:'https://pytorch.org'}]},
+  {id:'nlp', name:'NLP', category:'AI/ML', level:'Advanced', sources:[{name:'Hugging Face', type:'Free', url:'https://huggingface.co'}]},
+  {id:'gen_ai', name:'Generative AI', category:'AI/ML', level:'Intermediate', sources:[{name:'Google Cloud', type:'Free', url:'https://cloud.google.com'}]},
+
+  {id:'aws_cloud', name:'AWS Cloud', category:'Cloud', level:'Intermediate', sources:[{name:'AWS Skill Builder', type:'Free', url:'https://skillbuilder.aws'}]},
+  {id:'azure', name:'Microsoft Azure', category:'Cloud', level:'Intermediate', sources:[{name:'Microsoft', type:'Free', url:'https://learn.microsoft.com'}]},
+  {id:'gcp', name:'Google Cloud', category:'Cloud', level:'Intermediate', sources:[{name:'Google Cloud', type:'Free', url:'https://www.cloudskillsboost.google'}]},
+  {id:'docker', name:'Docker', category:'Cloud', level:'Intermediate', sources:[{name:'Docker Docs', type:'Free', url:'https://docs.docker.com'}]},
+  {id:'kubernetes', name:'Kubernetes', category:'Cloud', level:'Advanced', sources:[{name:'Kubernetes.io', type:'Free', url:'https://kubernetes.io'}]},
+  {id:'terraform', name:'Terraform', category:'Cloud', level:'Advanced', sources:[{name:'HashiCorp', type:'Free', url:'https://www.hashicorp.com'}]},
+
+  {id:'git', name:'Git & GitHub', category:'DevOps', level:'Beginner', sources:[{name:'GitHub Docs', type:'Free', url:'https://docs.github.com'}]},
+  {id:'ci_cd', name:'CI/CD Pipelines', category:'DevOps', level:'Intermediate', sources:[{name:'GitHub Actions', type:'Free', url:'https://github.com'}]},
+  {id:'ansible', name:'Ansible', category:'DevOps', level:'Advanced', sources:[{name:'Ansible Docs', type:'Free', url:'https://docs.ansible.com'}]},
+  {id:'jenkins', name:'Jenkins', category:'DevOps', level:'Advanced', sources:[{name:'Jenkins.io', type:'Free', url:'https://www.jenkins.io'}]},
+
+  {id:'flutter', name:'Flutter', category:'Mobile Dev', level:'Intermediate', sources:[{name:'Flutter.dev', type:'Free', url:'https://flutter.dev'}]},
+  {id:'react_native', name:'React Native', category:'Mobile Dev', level:'Intermediate', sources:[{name:'React Native', type:'Free', url:'https://reactnative.dev'}]},
+  {id:'android', name:'Android Kotlin', category:'Mobile Dev', level:'Advanced', sources:[{name:'Android Developers', type:'Free', url:'https://developer.android.com'}]},
+
+  {id:'mongodb', name:'MongoDB', category:'Database', level:'Intermediate', sources:[{name:'MongoDB University', type:'Free', url:'https://university.mongodb.com'}]},
+  {id:'postgresql', name:'PostgreSQL', category:'Database', level:'Intermediate', sources:[{name:'PostgreSQL Docs', type:'Free', url:'https://www.postgresql.org'}]},
+  {id:'redis', name:'Redis', category:'Database', level:'Advanced', sources:[{name:'Redis.io', type:'Free', url:'https://redis.io'}]},
+
+  {id:'figma', name:'Figma', category:'UI/UX', level:'Beginner', sources:[{name:'Figma Learn', type:'Free', url:'https://help.figma.com'}, {name:'UI/UX Course', type:'Free', url:'https://help.figma.com/hc/en-us'}]},
+  {id:'adobe_xd', name:'Adobe XD', category:'UI/UX', level:'Beginner', sources:[{name:'Adobe Docs', type:'Free', url:'https://helpx.adobe.com'}]},
+
+  {id:'rust', name:'Rust', category:'Web Dev', level:'Advanced', sources:[{name:'Rust Book', type:'Free', url:'https://doc.rust-lang.org/book/'}]},
+
+  {id:'mysql', name:'MySQL', category:'Database', level:'Beginner', sources:[{name:'W3Schools MySQL', type:'Free', url:'https://www.w3schools.com/mysql/default.asp'}]},
+
+  {id:'python', name:'Python', category:'Data Science', level:'Beginner', sources:[{name:'Python Docs', type:'Free', url:'https://www.python.org'}, {name:'W3Schools Python', type:'Free', url:'https://www.w3schools.com/python/default.asp'}]},
+  {id:'cs50p', name:'CS50P Python', category:'Data Science', level:'Beginner', sources:[{name:'Harvard edX', type:'Free', url:'https://cs50.harvard.edu/python/'}]},
+  {id:'python_advanced', name:'Advanced Python', category:'Data Science', level:'Advanced', sources:[{name:'Real Python', type:'Free/Paid', url:'https://realpython.com'}]},
+
+  {id:'java', name:'Java Programming', category:'Web Dev', level:'Intermediate', sources:[{name:'W3Schools Java', type:'Free', url:'https://www.w3schools.com/java/default.asp'}, {name:'Oracle Java Docs', type:'Free', url:'https://docs.oracle.com/en/java/'}]},
+  {id:'spring_boot', name:'Spring Boot', category:'Web Dev', level:'Advanced', sources:[{name:'Spring.io', type:'Free', url:'https://spring.io'}]}, 
+  
+  {id:'c', name:'C Programming', category:'Web Dev', level:'Beginner', sources:[{name:'W3Schools C', type:'Free', url:'https://www.w3schools.com/c/index.php'}]},
+
+  {id:'cpp', name:'C++', category:'Web Dev', level:'Intermediate', sources:[{name:'W3Schools C++', type:'Free', url:'https://www.w3schools.com/cpp/default.asp'}]},
+
+  {id:'csharp', name:'C#', category:'Web Dev', level:'Intermediate', sources:[{name:'W3Schools C#', type:'Free', url:'https://www.w3schools.com/cs/default.asp'}]},
+
+  { id: 'dsa', name: 'DSA', category: 'Computer Science', level: 'Intermediate', sources: [{ name: 'GeeksforGeeks', type: 'Free', url: 'https://www.geeksforgeeks.org/data-structures/' }] }
+
+];

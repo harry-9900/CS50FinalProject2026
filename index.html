@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DWS Learn</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="data.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="run.js" defer></script>
+</head>
+<body class="light-mode">
+
+    <div class="d-flex flex-column vh-100 p-3">
+
+    
+
+        <div class="d-flex justify-content-between align-items-center mb-2 flex-shrink-0">
+
+            <div class="d-flex align-items-center gap-2">
+
+                <img src="./icons/DWSLOGO.png" alt="Logo" width="30" height="30" class="rounded">
+
+                <h4 class="fw-bold m-0 dws-title shadow-lg">DWS LEARN</h4>
+
+            </div>
+
+            <button id="togglemonbtn" class="btn btn-sm  rounded-pill px-2 py-1" style="font-size: 12px;"><i class="fa-solid fa-moon"></i></button>
+
+        </div>
+
+
+
+    
+
+        <div class="input-group mb-3 shadow-sm rounded flex-shrink-0">
+
+            <input type="text" id="searchInput" class="form-control form-control-sm border-0 py-2 px-3" placeholder="Search. . . .">
+
+        </div>
+
+
+
+   
+
+        <div class="category-scroll-container mb-3 flex-shrink-0 pb-1">
+
+            <div class="d-flex gap-2 flex-nowrap" id="categoryContainer">
+
+                <button class="btn btn-sm filter-btn active px-3 shadow-sm" data-category="All">All</button>
+
+                <button class="btn btn-sm filter-btn px-3 shadow-sm" data-category="Web Dev">Web Dev</button>
+
+                <button class="btn btn-sm filter-btn px-3 shadow-sm" data-category="Data Science">Data Science</button>
+
+                <button class="btn btn-sm filter-btn px-3 shadow-sm" data-category="Cyber Security">Cyber</button>
+
+                <button class="btn btn-sm filter-btn px-3 shadow-sm" data-category="AI/ML">AI/ML</button>
+
+                <button class="btn btn-sm filter-btn px-3 shadow-sm" data-category="Cloud">Cloud</button>
+
+                <button class="btn btn-sm filter-btn px-3 shadow-sm" data-category="DevOps">DevOps</button>
+
+                <button class="btn btn-sm filter-btn px-3 shadow-sm" data-category="Mobile Dev">Mobile Dev</button>
+
+                <button class="btn btn-sm filter-btn px-3 shadow-sm" data-category="Database">Database</button>
+
+                <button class="btn btn-sm filter-btn px-3 shadow-sm" data-category="UI/UX">UI/UX</button>
+
+            </div>
+
+        </div>
+
+
+
+   
+
+            <div id="skillsContainer" class="flex-grow-1 overflow-y-auto pe-1"></div>
+
+
+
+    
+
+            <div class="text-center py-2 mt-auto border-top flex-shrink-0" style="font-size: 11px;">
+
+            <span class="text-muted">Created by </span>
+
+            <a href="https://github.com/harry-9900" target="_blank" class="text-decoration-none fw-bold text-primary">Ds Harry Jaxson</a>
+
+            <span class="text-muted"> &copy; 2026</span>
+
+        </div>
+
+    </div>
+</body>
+</html>
