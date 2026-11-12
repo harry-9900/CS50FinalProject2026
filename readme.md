@@ -51,7 +51,7 @@ To try DWS LEARN on your computer, follow these steps:
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/harry-9900/dws-learn.git
+   git clone git clone https://github.com/harry-9900/dws-learn.git
    ```
 
 2. Open Google Chrome.
